@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+// import { Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 
 // components
@@ -13,11 +13,14 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Navbar />
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
-      </Routes>
+      </Routes> */}
+      <Home />
+      <About />
+      <Contact />
     </ChakraProvider>
   );
 }

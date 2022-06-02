@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 import { Flex, Button, IconButton } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
@@ -7,10 +8,18 @@ import { ColorModeSwitcher } from '../ColorModeSwitcher';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState('none');
+  const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
     setIsOpen(isOpen === 'none' ? 'block' : 'none');
   };
+
+  const navigation = [
+    { name: 'Home', path: '/#', current: false },
+    { name: 'About', path: '/#about', current: false },
+    { name: 'Projects', path: '/#projects', current: false },
+    { name: 'Contact', path: '/#contact', current: false },
+  ];
 
   return (
     <>
@@ -18,28 +27,21 @@ const Navbar = () => {
         {/* navbar screen size > lg */}
         <Flex pos="fixed" top="1rem" right="1rem" align="center">
           <Flex display={['none', 'none', 'flex', 'flex']}>
-            <NavLink to="/">
-              <Button
-                variant="ghost"
-                aria-label="Home"
-                my={5}
-                w="100%"
-                cursor="pointer"
-              >
-                Home
-              </Button>
-            </NavLink>
-            <NavLink to="/about">
-              <Button variant="ghost" aria-label="About" my={5} w="100%">
-                About
-              </Button>
-            </NavLink>
-            <NavLink to="/contact">
-              <Button variant="ghost" aria-label="Contact" my={5} w="100%">
-                Contact
-              </Button>
-            </NavLink>
+            {navigation.map(nav => (
+              <NavHashLink smooth key={nav.name} to={nav.path}>
+                <Button
+                  variant={nav.current ? 'outline' : 'ghost'}
+                  aria-label={nav.name}
+                  aria-current={nav.current ? `${nav.name}` : undefined}
+                  my={5}
+                  w="100%"
+                >
+                  {nav.name}
+                </Button>
+              </NavHashLink>
+            ))}
           </Flex>
+          <ColorModeSwitcher justifySelf="flex-end" />
           <IconButton
             aria-label="Open Menu"
             size="lg"
@@ -48,9 +50,9 @@ const Navbar = () => {
             display={['flex', 'flex', 'none', 'none']}
             onClick={handleClick}
           />
-          <ColorModeSwitcher justifySelf="flex-end" />
         </Flex>
         {/* mobile menue, screen size < lg */}
+
         <Flex
           w="100vw"
           bgColor="gray.50"
@@ -75,21 +77,20 @@ const Navbar = () => {
           </Flex>
 
           <Flex direction="column" align="center">
-            <NavLink to="/">
-              <Button variant="ghost" aria-label="Home" my={5} w="100%">
-                Home
-              </Button>
-            </NavLink>
-            <NavLink to="/about">
-              <Button variant="ghost" aria-label="About" my={5} w="100%">
-                About
-              </Button>
-            </NavLink>
-            <NavLink to="/contact">
-              <Button variant="ghost" aria-label="Contact" my={5} w="100%">
-                Contact
-              </Button>
-            </NavLink>
+            {navigation.map(nav => (
+              <NavHashLink smooth key={nav.name} to={nav.path}>
+                <Button
+                  variant={nav.current ? 'outline' : 'ghost'}
+                  aria-label={nav.name}
+                  aria-current={nav.current ? `${nav.name}` : undefined}
+                  my={5}
+                  w="100%"
+                  onClick={handleClick}
+                >
+                  {nav.name}
+                </Button>
+              </NavHashLink>
+            ))}
           </Flex>
         </Flex>
       </nav>
