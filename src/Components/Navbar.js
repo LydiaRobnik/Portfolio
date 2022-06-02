@@ -20,9 +20,8 @@ const Navbar = () => {
           <Flex display={['none', 'none', 'flex', 'flex']}>
             <NavLink to="/">
               <Button
-                as="a"
                 variant="ghost"
-                aria-lable="Home"
+                aria-label="Home"
                 my={5}
                 w="100%"
                 cursor="pointer"
@@ -31,18 +30,12 @@ const Navbar = () => {
               </Button>
             </NavLink>
             <NavLink to="/about">
-              <Button as="a" variant="ghost" aria-lable="About" my={5} w="100%">
+              <Button variant="ghost" aria-label="About" my={5} w="100%">
                 About
               </Button>
             </NavLink>
             <NavLink to="/contact">
-              <Button
-                as="a"
-                variant="ghost"
-                aria-lable="Contact"
-                my={5}
-                w="100%"
-              >
+              <Button variant="ghost" aria-label="Contact" my={5} w="100%">
                 Contact
               </Button>
             </NavLink>
@@ -83,23 +76,17 @@ const Navbar = () => {
 
           <Flex direction="column" align="center">
             <NavLink to="/">
-              <Button as="a" variant="ghost" aria-lable="Home" my={5} w="100%">
+              <Button variant="ghost" aria-label="Home" my={5} w="100%">
                 Home
               </Button>
             </NavLink>
             <NavLink to="/about">
-              <Button as="a" variant="ghost" aria-lable="About" my={5} w="100%">
+              <Button variant="ghost" aria-label="About" my={5} w="100%">
                 About
               </Button>
             </NavLink>
             <NavLink to="/contact">
-              <Button
-                as="a"
-                variant="ghost"
-                aria-lable="Contact"
-                my={5}
-                w="100%"
-              >
+              <Button variant="ghost" aria-label="Contact" my={5} w="100%">
                 Contact
               </Button>
             </NavLink>
