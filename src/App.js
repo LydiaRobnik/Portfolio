@@ -6,6 +6,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import About from './Components/About';
+import Toolbox from './Components/Toolbox';
 import Contact from './Components/Contact';
 import theme from './theme';
 
@@ -20,6 +21,7 @@ function App() {
       </Routes> */}
       <Home />
       <About />
+      <Toolbox />
       <Contact />
     </ChakraProvider>
   );

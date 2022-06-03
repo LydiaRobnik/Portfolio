@@ -5,8 +5,8 @@ const Home = () => {
   const { colorMode } = useColorMode();
   return (
     <>
-      <Box maxW="960px" mx="auto" mt={[24]} textAlign="center">
-        <Heading as="h2" my="3rem">
+      <Box maxW="960px" mx="auto" mt={[28]} textAlign="center">
+        <Heading as="h2" my="1rem">
           Welcome, I am Lydia
         </Heading>
         <Image
@@ -18,7 +18,7 @@ const Home = () => {
           alt="Profile picture Lydia Robnik"
         />
       </Box>
-      <Heading as="h1" my="3rem" textAlign="center">
+      <Heading as="h1" my="1rem" textAlign="center">
         Front-End Developer
       </Heading>
     </>

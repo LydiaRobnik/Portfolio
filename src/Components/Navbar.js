@@ -8,18 +8,22 @@ import { ColorModeSwitcher } from '../ColorModeSwitcher';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState('none');
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState('');
+
+  const navigation = [
+    { name: 'Home', path: '/#' },
+    { name: 'About', path: '/#about' },
+    { name: 'Projects', path: '/#projects' },
+    { name: 'Contact', path: '/#contact' },
+  ];
 
   const handleClick = () => {
     setIsOpen(isOpen === 'none' ? 'block' : 'none');
   };
 
-  const navigation = [
-    { name: 'Home', path: '/#', current: false },
-    { name: 'About', path: '/#about', current: false },
-    { name: 'Projects', path: '/#projects', current: false },
-    { name: 'Contact', path: '/#contact', current: false },
-  ];
+  const handleActive = navSection => {
+    setIsActive(navSection);
+  };
 
   return (
     <>
@@ -30,11 +34,13 @@ const Navbar = () => {
             {navigation.map(nav => (
               <NavHashLink smooth key={nav.name} to={nav.path}>
                 <Button
-                  variant={nav.current ? 'outline' : 'ghost'}
+                  variant="ghost"
+                  colorScheme={isActive === nav.name ? 'cyan' : 'gray'}
                   aria-label={nav.name}
                   aria-current={nav.current ? `${nav.name}` : undefined}
                   my={5}
                   w="100%"
+                  onClick={() => handleActive(nav.name)}
                 >
                   {nav.name}
                 </Button>
@@ -80,12 +86,16 @@ const Navbar = () => {
             {navigation.map(nav => (
               <NavHashLink smooth key={nav.name} to={nav.path}>
                 <Button
-                  variant={nav.current ? 'outline' : 'ghost'}
+                  variant="ghost"
+                  colorScheme={isActive === nav.name ? 'cyan' : 'gray'}
                   aria-label={nav.name}
                   aria-current={nav.current ? `${nav.name}` : undefined}
                   my={5}
                   w="100%"
-                  onClick={handleClick}
+                  onClick={() => {
+                    handleClick();
+                    handleActive(nav.name);
+                  }}
                 >
                   {nav.name}
                 </Button>
