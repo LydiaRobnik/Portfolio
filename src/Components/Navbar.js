@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
-// import { NavLink } from 'react-router-dom';
-import { NavHashLink } from 'react-router-hash-link';
+import { Link } from 'react-scroll';
 import { Flex, Button, IconButton } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
+import './navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState('none');
-  const [isActive, setIsActive] = useState('');
 
   const navigation = [
-    { name: 'Home', path: '/#' },
-    { name: 'About', path: '/#about' },
-    { name: 'Projects', path: '/#projects' },
-    { name: 'Contact', path: '/#contact' },
+    { name: 'Home', path: 'home' },
+    { name: 'About', path: 'about' },
+    { name: 'Skills', path: 'skills' },
+    { name: 'Projects', path: 'projects' },
+    { name: 'Contact', path: 'contact' },
   ];
 
   const handleClick = () => {
     setIsOpen(isOpen === 'none' ? 'block' : 'none');
-  };
-
-  const handleActive = navSection => {
-    setIsActive(navSection);
   };
 
   return (
@@ -32,26 +27,34 @@ const Navbar = () => {
         <Flex pos="fixed" top="1rem" right="1rem" align="center">
           <Flex display={['none', 'none', 'flex', 'flex']}>
             {navigation.map(nav => (
-              <NavHashLink smooth key={nav.name} to={nav.path}>
+              <Link
+                smooth={true}
+                duration={1200}
+                offset={-110}
+                spy={true}
+                hashSpy={true}
+                activeClass="active"
+                key={nav.name}
+                to={nav.path}
+              >
                 <Button
                   variant="ghost"
-                  colorScheme={isActive === nav.name ? 'cyan' : 'gray'}
                   aria-label={nav.name}
                   aria-current={nav.current ? `${nav.name}` : undefined}
-                  my={5}
+                  mt={5}
+                  mb={1}
                   w="100%"
-                  onClick={() => handleActive(nav.name)}
                 >
                   {nav.name}
                 </Button>
-              </NavHashLink>
+              </Link>
             ))}
           </Flex>
           <ColorModeSwitcher justifySelf="flex-end" />
           <IconButton
             aria-label="Open Menu"
             size="lg"
-            mr={2}
+            mx={2}
             icon={<HamburgerIcon />}
             display={['flex', 'flex', 'none', 'none']}
             onClick={handleClick}
@@ -84,22 +87,29 @@ const Navbar = () => {
 
           <Flex direction="column" align="center">
             {navigation.map(nav => (
-              <NavHashLink smooth key={nav.name} to={nav.path}>
+              <Link
+                smooth={true}
+                duration={1200}
+                offset={-100}
+                spy={true}
+                hashSpy={true}
+                activeClass="active"
+                key={nav.name}
+                to={nav.path}
+              >
                 <Button
                   variant="ghost"
-                  colorScheme={isActive === nav.name ? 'cyan' : 'gray'}
                   aria-label={nav.name}
                   aria-current={nav.current ? `${nav.name}` : undefined}
                   my={5}
                   w="100%"
                   onClick={() => {
                     handleClick();
-                    handleActive(nav.name);
                   }}
                 >
                   {nav.name}
                 </Button>
-              </NavHashLink>
+              </Link>
             ))}
           </Flex>
         </Flex>

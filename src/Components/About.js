@@ -4,7 +4,7 @@ import { Text, Heading, Box } from '@chakra-ui/react';
 const About = () => {
   return (
     <>
-      <Box mx={6} mt={[36]} id="about">
+      <Box maxW="960px" h="100vh" mx={6} mt={[36]} id="about">
         <Heading as="h2" size="2xl">
           Who I Am
         </Heading>
@@ -24,6 +24,11 @@ const About = () => {
             creating illustrations using figma.
           </Text>
         </Box>
+        <img
+          src="lily_whithout_glas.png"
+          alt="illustration of a lily"
+          className="rotate-90"
+        />
       </Box>
     </>
   );

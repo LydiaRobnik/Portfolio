@@ -28,7 +28,7 @@ const techStack = [
 const Toolbox = () => {
   return (
     <>
-      <Box maxW="960px" mx={6} mt={[36]} id="toolbox">
+      <Box maxW="960px" h="100vh" mx={6} mt={[36]} id="skills">
         <Box mx={6} mt={[36]}>
           <Heading as="h2" size="2xl">
             My Toolbox
