@@ -4,7 +4,7 @@ import { Text, Heading, Box } from '@chakra-ui/react';
 const About = () => {
   return (
     <>
-      <Box maxW="960px" h="100vh" mx={6} mt={[36]} id="about">
+      <Box maxW="960px" h="100vh" mx={6} id="about">
         <Heading as="h2" size="2xl">
           Who I Am
         </Heading>

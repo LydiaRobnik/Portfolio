@@ -24,7 +24,20 @@ const Navbar = () => {
     <>
       <nav>
         {/* navbar screen size > lg */}
-        <Flex pos="fixed" top="1rem" right="1rem" align="center">
+        <Flex
+          w="100vw"
+          pos="fixed"
+          top="0"
+          right="0"
+          align="center"
+          justify="end"
+          bg="White"
+          borderBottom="1px"
+          borderColor="gray.100"
+          // sx={{ opacity: '0.9' }}
+          py={3}
+          px={3}
+        >
           <Flex display={['none', 'none', 'flex', 'flex']}>
             {navigation.map(nav => (
               <Link
@@ -41,8 +54,7 @@ const Navbar = () => {
                   variant="ghost"
                   aria-label={nav.name}
                   aria-current={nav.current ? `${nav.name}` : undefined}
-                  mt={5}
-                  mb={1}
+                  my={1}
                   w="100%"
                 >
                   {nav.name}
