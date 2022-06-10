@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
-import { Flex, Button, IconButton } from '@chakra-ui/react';
+import { Flex, Button, IconButton, useColorModeValue } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import './navbar.css';
 
 const Navbar = () => {
+  const bg = useColorModeValue('white', 'gray.800');
   const [isOpen, setIsOpen] = useState('none');
 
   const navigation = [
     { name: 'Home', path: 'home' },
     { name: 'About', path: 'about' },
     { name: 'Skills', path: 'skills' },
-    { name: 'Projects', path: 'projects' },
+    // { name: 'Projects', path: 'projects' },
     { name: 'Contact', path: 'contact' },
   ];
 
@@ -31,7 +32,7 @@ const Navbar = () => {
           right="0"
           align="center"
           justify="end"
-          bg="White"
+          bg={bg}
           borderBottom="1px"
           borderColor="gray.100"
           // sx={{ opacity: '0.9' }}
