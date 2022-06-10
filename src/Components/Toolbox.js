@@ -46,7 +46,9 @@ const Toolbox = () => {
                 justify="center"
               >
                 <FontAwesomeIcon icon={skill.icon} size="4x" />
-                <Text fontSize="md">{skill.name}</Text>
+                <Text fontSize="md" textAlign={'center'} pt={1}>
+                  {skill.name}
+                </Text>
               </Flex>
             </GridItem>
           ))}

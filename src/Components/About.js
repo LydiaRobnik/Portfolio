@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Heading, Box } from '@chakra-ui/react';
+import { Text, Heading, Box, Image } from '@chakra-ui/react';
 
 const About = () => {
   return (
@@ -24,10 +24,10 @@ const About = () => {
             creating illustrations using figma.
           </Text>
         </Box>
-        <img
-          src="lily_whithout_glas.png"
-          alt="illustration of a lily"
-          className="rotate-90"
+        <Image
+          src="wale_transparent.png"
+          alt="illustration of a wale"
+          align="center"
         />
       </Box>
     </>

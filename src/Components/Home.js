@@ -6,6 +6,8 @@ import {
   Heading,
   IconButton,
   Flex,
+  Text,
+  Center,
 } from '@chakra-ui/react';
 import { animateScroll as scroll } from 'react-scroll';
 import About from './About';
@@ -20,10 +22,11 @@ const Home = () => {
     <>
       <header>
         <Box maxW="960px" h="100vh" mx="auto" mt={[36]}>
-          <Box textAlign="center" id="home">
+          <Flex textAlign="center" id="home" direction="column" align="center">
             <Heading as="h2" my="1rem">
               Welcome, I am Lydia
             </Heading>
+
             <Image
               src={
                 colorMode === 'light'
@@ -31,8 +34,10 @@ const Home = () => {
                   : 'profile-pic-ly-dark.jpg'
               }
               alt="Profile picture Lydia Robnik"
+              maxW="300px"
+              m={0}
             />
-          </Box>
+          </Flex>
           <Heading as="h1" my="1rem" textAlign="center">
             Front-End Developer
           </Heading>
@@ -41,7 +46,7 @@ const Home = () => {
       <main>
         <About />
         <Toolbox />
-        <Projects />
+        {/* <Projects /> */}
         <Contact />
       </main>
       <footer>
@@ -58,6 +63,11 @@ const Home = () => {
             isRound
             onClick={() => scroll.scrollToTop()}
           ></IconButton>
+        </Flex>
+        <Flex justify="start" pl={10}>
+          <Text my={10} fontSize="xs">
+            Lydia Robnik - Friedrichstr. 59 - 68809 Neulußheim
+          </Text>
         </Flex>
       </footer>
     </>
