@@ -2,17 +2,14 @@ import React from 'react';
 import {
   useColorMode,
   Image,
-  Box,
   Heading,
   IconButton,
   Flex,
-  Text,
-  Center,
 } from '@chakra-ui/react';
 import { animateScroll as scroll } from 'react-scroll';
 import About from './About';
 import Toolbox from './Toolbox';
-import Projects from './Projects';
+// import Projects from './Projects';
 import Contact from './Contact';
 import { ArrowUpIcon } from '@chakra-ui/icons';
 
@@ -21,12 +18,19 @@ const Home = () => {
   return (
     <>
       <header>
-        <Box maxW="960px" h="100vh" mx="auto" mt={[36]}>
-          <Flex textAlign="center" id="home" direction="column" align="center">
+        <Flex
+          maxW="960px"
+          h="100vh"
+          mx="auto"
+          id="home"
+          direction="row"
+          align="center"
+          justify="center"
+        >
+          <Flex direction="column" align="center">
             <Heading as="h2" my="1rem">
               Welcome, I am Lydia
             </Heading>
-
             <Image
               src={
                 colorMode === 'light'
@@ -37,11 +41,11 @@ const Home = () => {
               maxW="300px"
               m={0}
             />
+            <Heading as="h1" my="1rem">
+              Front-End Developer
+            </Heading>
           </Flex>
-          <Heading as="h1" my="1rem" textAlign="center">
-            Front-End Developer
-          </Heading>
-        </Box>
+        </Flex>
       </header>
       <main>
         <About />
@@ -63,11 +67,6 @@ const Home = () => {
             isRound
             onClick={() => scroll.scrollToTop()}
           ></IconButton>
-        </Flex>
-        <Flex justify="start" pl={10}>
-          <Text my={10} fontSize="xs">
-            Lydia Robnik - Friedrichstr. 59 - 68809 Neulußheim
-          </Text>
         </Flex>
       </footer>
     </>

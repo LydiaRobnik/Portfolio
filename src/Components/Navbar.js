@@ -44,7 +44,7 @@ const Navbar = () => {
               <Link
                 smooth={true}
                 duration={1200}
-                offset={-110}
+                offset={0}
                 spy={true}
                 hashSpy={true}
                 activeClass="active"

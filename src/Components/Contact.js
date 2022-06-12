@@ -1,14 +1,12 @@
 import React from 'react';
 import {
-  Grid,
-  GridItem,
   Heading,
-  Box,
   Text,
   IconButton,
   ButtonGroup,
   Link,
   Flex,
+  Box,
 } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import { FaLinkedinIn, FaGithub, FaDiscord } from 'react-icons/fa';
@@ -43,51 +41,51 @@ const Contact = () => {
 
   return (
     <>
-      <Box maxW="960px" h="60vh" id="contact" mx={6}>
-        {/* <Grid
-          templateColumns="repeat(12, 1fr)"
-          templateRows="repeat(3, 1fr)"
-          gap={2}
-          mt={[32]}
-        > */}
-        {/* <GridItem colSpan={10} colStart={2} colEnd={12} rowSpan={1}> */}
-        <Heading as="h2" size="2xl">
-          Get In Touch
-        </Heading>
-        {/* </GridItem> */}
-        {/* <GridItem colSpan={10} colStart={2} colEnd={12} rowSpan={1}> */}
-        <Text py={1} mt={12}>
-          Dropping a line to say "hello", get connected on social media or see
-          if we can build something amazing together? I’d love to hear from you!
-        </Text>
-        {/* </GridItem> */}
-        {/* <GridItem colSpan={10} colStart={3} colEnd={10} rowSpan={1}> */}
-        <Flex justify="center">
-          <ButtonGroup spacing="16px" my={20}>
-            {contactOptions.map(option => (
-              <Link href={option.href} isExternal>
-                <IconButton
-                  variant="outline"
-                  colorScheme="teal"
-                  key={option.option}
-                  aria-label={option.aria}
-                  icon={option.icon}
-                  as={option.reactIcon}
-                  p={2}
-                  cursor="pointer"
-                ></IconButton>
-              </Link>
-            ))}
-          </ButtonGroup>
-        </Flex>
-        {/* </GridItem> */}
-        {/* <GridItem colSpan={10} colStart={2} colEnd={12} rowSpan={1}>
+      <Flex
+        maxW="960px"
+        h="80vh"
+        id="contact"
+        mx="auto"
+        direction="column"
+        align="center"
+        justify="center"
+      >
+        <Box mx={6}>
+          <Heading as="h2" size="2xl">
+            Get In Touch
+          </Heading>
+
+          <Text py={1} mt={12}>
+            Dropping a line to say "hello", get connected on social media or see
+            if we can build something amazing together? I’d love to hear from
+            you!
+          </Text>
+
+          <Flex justify="start">
+            <ButtonGroup spacing="16px" my={20}>
+              {contactOptions.map(option => (
+                <Link href={option.href} isExternal>
+                  <IconButton
+                    variant="outline"
+                    colorScheme="teal"
+                    key={option.option}
+                    aria-label={option.aria}
+                    icon={option.icon}
+                    as={option.reactIcon}
+                    p={2}
+                    cursor="pointer"
+                  ></IconButton>
+                </Link>
+              ))}
+            </ButtonGroup>
+          </Flex>
+          <Flex justify="start">
             <Text my={10} fontSize="xs">
               Lydia Robnik - Friedrichstr. 59 - 68809 Neulußheim
             </Text>
-          </GridItem> */}
-        {/* </Grid> */}
-      </Box>
+          </Flex>
+        </Box>
+      </Flex>
     </>
   );
 };

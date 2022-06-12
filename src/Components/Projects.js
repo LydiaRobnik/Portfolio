@@ -1,11 +1,22 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
 const Projects = () => {
   return (
-    <Box maxW="960px" h="100vh" id="projects">
-      Projects
-    </Box>
+    <Flex
+      maxW="960px"
+      h="100vh"
+      id="projects"
+      direction="column"
+      align="center"
+      justify="center"
+    >
+      <Box mx={6}>
+        <Heading as="h2" size="2xl">
+          Projects
+        </Heading>
+      </Box>
+    </Flex>
   );
 };
 
