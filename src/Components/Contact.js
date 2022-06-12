@@ -43,14 +43,14 @@ const Contact = () => {
     <>
       <Flex
         maxW="960px"
-        h="80vh"
+        // h="80vh"
         id="contact"
         mx="auto"
         direction="column"
         align="center"
         justify="center"
       >
-        <Box mx={6}>
+        <Box w="100%" px={6} pt={16} borderTop="1px" borderColor="gray.200">
           <Heading as="h2" size="2xl">
             Get In Touch
           </Heading>
@@ -62,12 +62,12 @@ const Contact = () => {
           </Text>
 
           <Flex justify="start">
-            <ButtonGroup spacing="16px" my={20}>
+            <ButtonGroup spacing="16px" my={12}>
               {contactOptions.map(option => (
                 <Link href={option.href} isExternal>
                   <IconButton
                     variant="outline"
-                    colorScheme="teal"
+                    colorScheme="cyan"
                     key={option.option}
                     aria-label={option.aria}
                     icon={option.icon}
@@ -79,12 +79,13 @@ const Contact = () => {
               ))}
             </ButtonGroup>
           </Flex>
-          <Flex justify="start">
-            <Text my={10} fontSize="xs">
-              Lydia Robnik - Friedrichstr. 59 - 68809 Neulußheim
-            </Text>
-          </Flex>
         </Box>
+
+        {/* <Flex justify="start" w="100%" px={6}>
+          <Text my={10} fontSize="xs">
+            Lydia Robnik - Friedrichstr. 59 - 68809 Neulußheim
+          </Text>
+        </Flex> */}
       </Flex>
     </>
   );

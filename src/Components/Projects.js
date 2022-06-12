@@ -5,13 +5,14 @@ const Projects = () => {
   return (
     <Flex
       maxW="960px"
-      h="100vh"
+      // h="100vh"
       id="projects"
       direction="column"
       align="center"
       justify="center"
+      pb={16}
     >
-      <Box mx={6}>
+      <Box mx={6} pt={16} borderTop="1px" borderColor="gray.200">
         <Heading as="h2" size="2xl">
           Projects
         </Heading>

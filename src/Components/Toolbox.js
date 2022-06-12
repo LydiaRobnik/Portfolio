@@ -30,19 +30,25 @@ const Toolbox = () => {
     <>
       <Flex
         maxW="960px"
-        h="100vh"
+        // h="100vh"
         mx="auto"
         id="skills"
-        direction="column"
+        direction="row"
         align="center"
         justify="center"
+        pb={16}
       >
-        <Box mx={6}>
+        <Box w="100%" mx={6} pt={16} borderTop="1px" borderColor="gray.200">
           <Heading as="h2" size="2xl">
             My Toolbox
           </Heading>
 
-          <Grid templateColumns="repeat(3, 1fr)" gap={4} my={16} pb={16}>
+          <Grid
+            templateColumns="repeat(auto-fill, minmax(100px, 1fr))"
+            gap={4}
+            mt={16}
+            pb={8}
+          >
             {techStack.map(skill => (
               <GridItem key={skill.name}>
                 <Flex
