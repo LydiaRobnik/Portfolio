@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Text, Heading, Flex, GridItem, Box } from '@chakra-ui/react';
+import { Grid, Text, Heading, Flex, Box, GridItem } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHtml5,
@@ -28,32 +28,46 @@ const techStack = [
 const Toolbox = () => {
   return (
     <>
-      <Box maxW="960px" h="100vh" mx={6} id="skills">
-        <Box mx={6} mt={[36]}>
+      <Flex
+        maxW="960px"
+        // h="100vh"
+        mx="auto"
+        id="skills"
+        direction="row"
+        align="center"
+        justify="center"
+        pb={16}
+      >
+        <Box w="100%" mx={6} pt={16} borderTop="1px" borderColor="gray.200">
           <Heading as="h2" size="2xl">
             My Toolbox
           </Heading>
-        </Box>
 
-        <Grid templateColumns="repeat(3, 1fr)" gap={4} my={24}>
-          {techStack.map(skill => (
-            <GridItem key={skill.name}>
-              <Flex
-                w="100%"
-                h="100%"
-                direction="column"
-                align="center"
-                justify="center"
-              >
-                <FontAwesomeIcon icon={skill.icon} size="4x" />
-                <Text fontSize="md" textAlign={'center'} pt={1}>
-                  {skill.name}
-                </Text>
-              </Flex>
-            </GridItem>
-          ))}
-        </Grid>
-      </Box>
+          <Grid
+            templateColumns="repeat(auto-fill, minmax(100px, 1fr))"
+            gap={4}
+            mt={16}
+            pb={8}
+          >
+            {techStack.map(skill => (
+              <GridItem key={skill.name}>
+                <Flex
+                  w="100%"
+                  h="100%"
+                  direction="column"
+                  align="center"
+                  justify="center"
+                >
+                  <FontAwesomeIcon icon={skill.icon} size="4x" />
+                  <Text fontSize="md" textAlign={'center'} pt={1}>
+                    {skill.name}
+                  </Text>
+                </Flex>
+              </GridItem>
+            ))}
+          </Grid>
+        </Box>
+      </Flex>
     </>
   );
 };

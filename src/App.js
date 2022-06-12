@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 // styling chakra-UI
 import theme from './theme';
+import './Styles/App.css';
 
 function App() {
   return (

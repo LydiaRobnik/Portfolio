@@ -1,14 +1,23 @@
 import React from 'react';
-import { Text, Heading, Box, Image } from '@chakra-ui/react';
+import { Text, Heading, Box, Flex, Image } from '@chakra-ui/react';
 
 const About = () => {
   return (
     <>
-      <Box maxW="960px" h="100vh" mx={6} id="about">
-        <Heading as="h2" size="2xl">
-          Who I Am
-        </Heading>
-        <Box>
+      <Flex
+        maxW="960px"
+        // h="100vh"
+        mx="auto"
+        id="about"
+        direction="column"
+        align="center"
+        justify="center"
+        pb={16}
+      >
+        <Box mx={6} pt={16} borderTop="1px" borderColor="gray.200">
+          <Heading as="h2" size="2xl">
+            Who I Am
+          </Heading>
           <Text my={6}>
             As a curiosity-driven front-end devoper I am interested in
             experimenting with technologies and continually expanding my
@@ -28,8 +37,9 @@ const About = () => {
           src="wale_transparent.png"
           alt="illustration of a wale"
           align="center"
+          maxW="350px"
         />
-      </Box>
+      </Flex>
     </>
   );
 };

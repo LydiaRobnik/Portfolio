@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 import { Flex, Button, IconButton, useColorModeValue } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
-import './navbar.css';
+import '../Styles/navbar.css';
 
 const Navbar = () => {
   const bg = useColorModeValue('white', 'gray.800');
@@ -26,15 +26,16 @@ const Navbar = () => {
       <nav>
         {/* navbar screen size > lg */}
         <Flex
-          w="100vw"
+          w="100%"
           pos="fixed"
-          top="0"
+          top="-1px"
           right="0"
           align="center"
           justify="end"
           bg={bg}
-          borderBottom="1px"
-          borderColor="gray.100"
+          // borderBottom="1px"
+          // borderColor="gray.100"
+          boxShadow="sm"
           // sx={{ opacity: '0.9' }}
           py={3}
           px={3}
@@ -44,7 +45,7 @@ const Navbar = () => {
               <Link
                 smooth={true}
                 duration={1200}
-                offset={-110}
+                offset={0}
                 spy={true}
                 hashSpy={true}
                 activeClass="active"
