@@ -7,33 +7,34 @@ import {
   Link,
   Flex,
   Box,
+  Button,
 } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
-import { FaLinkedinIn, FaGithub, FaDiscord } from 'react-icons/fa';
+// import { FaLinkedinIn, FaGithub, FaDiscord } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faLinkedinIn,
+  faGithub,
+  faDiscord,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
   const contactOptions = [
     {
-      option: 'Email',
-      icon: <EmailIcon />,
-      href: 'mailto:lydiarobnik@gmail.com',
-      aria: 'send email',
-    },
-    {
       option: 'LinkedIn',
-      reactIcon: FaLinkedinIn,
+      reactIcon: faLinkedinIn,
       href: 'https://www.linkedin.com/in/lydiarobnik/',
       aria: 'view LinkedIn profile',
     },
     {
       option: 'GitHub',
-      reactIcon: FaGithub,
+      reactIcon: faGithub,
       href: 'https://www.github.com/LydiaRobnik',
       aria: 'view GitHub profile',
     },
     {
       option: 'Discord',
-      reactIcon: FaDiscord,
+      reactIcon: faDiscord,
       href: 'https://discordapp.com/users/982315750628950017',
       aria: 'view Discord profile',
     },
@@ -44,48 +45,52 @@ const Contact = () => {
       <Flex
         maxW="960px"
         // h="80vh"
-        id="contact"
         mx="auto"
+        id="contact"
         direction="column"
         align="center"
         justify="center"
       >
-        <Box w="100%" px={6} pt={16} borderTop="1px" borderColor="gray.200">
+        <Box w="100%" px={6} pt={16}>
           <Heading as="h2" size="2xl">
             Get In Touch
           </Heading>
+          <Box>
+            <Text py={1} mt={12}>
+              Dropping a line to say "hello", get connected on social media or
+              see if we can build something amazing together? I’d love to hear
+              from you!
+            </Text>
 
-          <Text py={1} mt={12}>
-            Dropping a line to say "hello", get connected on social media or see
-            if we can build something amazing together? I’d love to hear from
-            you!
-          </Text>
-
-          <Flex justify="start">
-            <ButtonGroup spacing="16px" my={12}>
-              {contactOptions.map(option => (
-                <Link href={option.href} isExternal>
+            <Flex justify="start">
+              <ButtonGroup spacing="16px" my={12}>
+                <Link href="mailto:lydiarobnik@gmail.com" isExternal>
                   <IconButton
                     variant="outline"
                     colorScheme="cyan"
-                    key={option.option}
-                    aria-label={option.aria}
-                    icon={option.icon}
-                    as={option.reactIcon}
+                    aria-label="send email"
+                    icon={<EmailIcon />}
                     p={2}
                     cursor="pointer"
-                  ></IconButton>
+                  />
                 </Link>
-              ))}
-            </ButtonGroup>
-          </Flex>
+                {contactOptions.map(option => (
+                  <Link key={option.option} href={option.href} isExternal>
+                    <Button
+                      variant="outline"
+                      aria-label={option.aria}
+                      p={2}
+                      cursor="pointer"
+                      colorScheme="cyan"
+                    >
+                      <FontAwesomeIcon icon={option.reactIcon} size="lg" />
+                    </Button>
+                  </Link>
+                ))}
+              </ButtonGroup>
+            </Flex>
+          </Box>
         </Box>
-
-        {/* <Flex justify="start" w="100%" px={6}>
-          <Text my={10} fontSize="xs">
-            Lydia Robnik - Friedrichstr. 59 - 68809 Neulußheim
-          </Text>
-        </Flex> */}
       </Flex>
     </>
   );

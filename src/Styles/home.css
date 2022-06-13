@@ -1,1 +1,35 @@
+:root {
+    --gradient: linear-gradient(45deg, 
+    #FF922A, 
+    #FF8888,
+    #fa6865,
+    #CC5A8D,
+    #5A8BCC,
+    #c3fcf1
+)
+}
+
 footer {margin: 0; padding: 0;}
+
+.gradient {
+    background-image: var(--gradient);
+    background-size: 400%;
+    background-position: left;
+    transition: background-position 1s;
+    background-clip: text;
+    color: transparent;
+    animation: bg-animation 5s inifinite alternate;
+ }
+
+ .gradient:hover, .gradient:focus {
+    background-position: right;
+ }
+
+ @keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+ }

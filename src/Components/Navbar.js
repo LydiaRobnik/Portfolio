@@ -39,6 +39,7 @@ const Navbar = () => {
           // sx={{ opacity: '0.9' }}
           py={3}
           px={3}
+          zIndex={10}
         >
           <Flex display={['none', 'none', 'flex', 'flex']}>
             {navigation.map(nav => (
