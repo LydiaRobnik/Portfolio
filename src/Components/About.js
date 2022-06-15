@@ -15,6 +15,7 @@ const About = () => {
         <Flex
           mx={6}
           pt={16}
+          w="100%"
           borderTop="1px"
           borderColor="orange.200"
           direction="row"
@@ -46,6 +47,7 @@ const About = () => {
             direction="column"
             align="center"
             justify="center"
+            // sx={{ 'justify-self': 'end' }}
             animate={{
               x: [0, 100, 0],
               rotate: [5, -5, 5, -5, 5],

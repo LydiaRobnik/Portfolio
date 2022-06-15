@@ -21,6 +21,7 @@ import Contact from './Contact';
 const Home = () => {
   // const { colorMode } = useColorMode();
   const [isSmallerThan310] = useMediaQuery('(max-width: 310px)');
+
   return (
     <>
       <header>
@@ -37,7 +38,7 @@ const Home = () => {
           <Flex
             direction="row"
             align="start"
-            justify="center"
+            justify={['center', 'center', 'start']}
             wrap="wrap"
             w="100%"
             mx={6}
@@ -47,25 +48,27 @@ const Home = () => {
               borderRadius="md"
               alt="Profile picture Lydia Robnik"
               maxW="300px"
-              mx={6}
+              // mx={isSmallerThan310 ? '0' : '6'}
+              mr={['0', '4', '8', '16']}
             />
-            <Box maxW={['100%', '100%', '50%']}>
+            <Box grow="1" maxW={['100%', '100%', '50%']}>
               <Heading
                 as="h2"
                 mt="1.5rem"
+                mr={{ md: '3rem' }}
                 size={isSmallerThan310 ? 'md' : ['lg']}
                 // textAlign={{ base: 'center', sm: 'left' }}
 
                 w="100%"
-                // color="white"
               >
                 Welcome, I am Lydia
               </Heading>
 
               <Heading
                 as="h1"
+                mt={['0.4rem', '0.8rem', '2rem']}
                 mb="1rem"
-                size={isSmallerThan310 ? 'lg' : ['xl', '2xl', '3xl', '4xl']}
+                size={isSmallerThan310 ? 'md' : ['xl', '2xl', '3xl', '4xl']}
                 // textAlign={{ base: 'center', sm: 'left' }}
                 w={['100%', '100%', '100%', '50%']}
                 color="transparent"
@@ -79,6 +82,7 @@ const Home = () => {
           </Flex>
         </Flex>
       </header>
+
       <main>
         <About />
         <Toolbox />
@@ -100,13 +104,13 @@ const Home = () => {
             onClick={() => scroll.scrollToTop()}
           ></IconButton>
         </Flex>
-        <Box bg="cyan.800" h="100px">
-          <Flex justify={{ base: 'start', md: 'center' }} w="100%">
+        <Box bg="orange.300" h="80px">
+          <Flex justify={{ base: 'start', md: 'center' }} w="100%" h="100%">
             <Text
               my={10}
               mx={6}
               fontSize={isSmallerThan310 ? '10px' : ['0.65rem', '0.8rem']}
-              color="white"
+              // color="white"
             >
               Lydia Robnik - Friedrichstr. 59 - 68809 Neulußheim
             </Text>
