@@ -9,8 +9,10 @@ import {
   Box,
   Button,
 } from '@chakra-ui/react';
+import Obfuscate from 'react-obfuscate';
+
+// Icons
 import { EmailIcon } from '@chakra-ui/icons';
-// import { FaLinkedinIn, FaGithub, FaDiscord } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedinIn,
@@ -56,7 +58,7 @@ const Contact = () => {
             Get In Touch
           </Heading>
           <Box>
-            <Text py={1} mt={12}>
+            <Text py={1} mt={6} maxW="820px">
               Dropping a line to say "hello", get connected on social media or
               see if we can build something amazing together? I’d love to hear
               from you!
@@ -64,7 +66,10 @@ const Contact = () => {
 
             <Flex justify="start">
               <ButtonGroup spacing="16px" my={12}>
-                <Link href="mailto:lydiarobnik@gmail.com" isExternal>
+                <Obfuscate
+                  email="lydiarobnik@gmail.com"
+                  headers={{ subject: 'Nice portfolio', body: 'Hi Lydia, ...' }}
+                >
                   <IconButton
                     variant="outline"
                     colorScheme="cyan"
@@ -73,7 +78,7 @@ const Contact = () => {
                     p={2}
                     cursor="pointer"
                   />
-                </Link>
+                </Obfuscate>
                 {contactOptions.map(option => (
                   <Link key={option.option} href={option.href} isExternal>
                     <Button
