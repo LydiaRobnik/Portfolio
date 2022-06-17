@@ -60,7 +60,7 @@ const Contact = () => {
           pt={16}
           direction="column"
           borderTop="1px"
-          borderColor="orange.200"
+          borderColor="orange.300"
         >
           <Heading as="h2" size="2xl">
             Get In Touch
@@ -76,7 +76,7 @@ const Contact = () => {
               <Flex justify="start">
                 <ButtonGroup spacing="16px" my={12}>
                   <Obfuscate
-                    email="lydiarobnik@gmail.com"
+                    email="LydiaRobnik@women-at-work.org"
                     headers={{
                       subject: 'Nice portfolio',
                       body: 'Hi Lydia, ...',

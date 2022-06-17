@@ -43,7 +43,7 @@ const Toolbox = () => {
           mx={6}
           py={16}
           borderTop="1px"
-          borderColor="orange.200"
+          borderColor="orange.300"
           direction="column"
         >
           <Heading as="h2" size="2xl">
@@ -55,14 +55,13 @@ const Toolbox = () => {
             align="stretch"
             mt={8}
             bgGradient="linear(to-tl, cyan.400, teal.400, green.300)"
+            borderRadius="md"
           >
             <Grid
               templateColumns="repeat(auto-fill, minmax(100px, 1fr))"
               gap={4}
               my={8}
               maxW="430px"
-              border="20px"
-              borderColor="cyan.100"
             >
               {techStack.map(skill => (
                 <GridItem key={skill.name}>

@@ -17,7 +17,7 @@ const About = () => {
           pt={16}
           w="100%"
           borderTop="1px"
-          borderColor="orange.200"
+          borderColor="orange.300"
           direction="row"
           align="center"
           justify="start"

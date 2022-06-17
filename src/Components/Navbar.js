@@ -33,10 +33,7 @@ const Navbar = () => {
           align="center"
           justify="end"
           bg={bg}
-          // borderBottom="1px"
-          // borderColor="gray.100"
           boxShadow="sm"
-          // sx={{ opacity: '0.9' }}
           py={3}
           px={3}
           zIndex={10}
@@ -46,7 +43,7 @@ const Navbar = () => {
               <Link
                 smooth={true}
                 duration={1200}
-                offset={0}
+                offset={-20}
                 spy={true}
                 hashSpy={true}
                 activeClass="active"
@@ -79,7 +76,7 @@ const Navbar = () => {
 
         <Flex
           w="100vw"
-          bgColor="gray.50"
+          bg={bg}
           zIndex={20}
           h="100vh"
           pos="fixed"
