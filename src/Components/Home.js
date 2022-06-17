@@ -15,7 +15,7 @@ import '../Styles/home.css';
 
 import About from './About';
 import Toolbox from './Toolbox';
-// import Projects from './Projects';
+import ProjectsOverview from './ProjectsOverview';
 import Contact from './Contact';
 
 const Home = () => {
@@ -86,7 +86,7 @@ const Home = () => {
       <main>
         <About />
         <Toolbox />
-        {/* <Projects /> */}
+        <ProjectsOverview />
         <Contact />
       </main>
       <footer>

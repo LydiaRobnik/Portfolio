@@ -8,6 +8,8 @@ import {
   Flex,
   Box,
   Button,
+  Image,
+  Show,
 } from '@chakra-ui/react';
 import Obfuscate from 'react-obfuscate';
 
@@ -46,56 +48,75 @@ const Contact = () => {
     <>
       <Flex
         maxW="960px"
-        // h="80vh"
         mx="auto"
         id="contact"
-        direction="column"
+        direction="row"
         align="center"
         justify="center"
       >
-        <Box w="100%" px={6} pt={16}>
+        <Flex
+          w="100%"
+          mx={6}
+          pt={16}
+          direction="column"
+          borderTop="1px"
+          borderColor="orange.200"
+        >
           <Heading as="h2" size="2xl">
             Get In Touch
           </Heading>
-          <Box>
-            <Text py={1} mt={6} maxW="820px">
-              Dropping a line to say "hello", get connected on social media or
-              see if we can build something amazing together? I’d love to hear
-              from you!
-            </Text>
+          <Flex direction="row">
+            <Box>
+              <Text py={1} mt={6} maxW="600px">
+                Dropping a line to say "hello", get connected on social media or
+                see if we can build something amazing together? I’d love to hear
+                from you!
+              </Text>
 
-            <Flex justify="start">
-              <ButtonGroup spacing="16px" my={12}>
-                <Obfuscate
-                  email="lydiarobnik@gmail.com"
-                  headers={{ subject: 'Nice portfolio', body: 'Hi Lydia, ...' }}
-                >
-                  <IconButton
-                    variant="outline"
-                    colorScheme="cyan"
-                    aria-label="send email"
-                    icon={<EmailIcon />}
-                    p={2}
-                    cursor="pointer"
-                  />
-                </Obfuscate>
-                {contactOptions.map(option => (
-                  <Link key={option.option} href={option.href} isExternal>
-                    <Button
+              <Flex justify="start">
+                <ButtonGroup spacing="16px" my={12}>
+                  <Obfuscate
+                    email="lydiarobnik@gmail.com"
+                    headers={{
+                      subject: 'Nice portfolio',
+                      body: 'Hi Lydia, ...',
+                    }}
+                  >
+                    <IconButton
                       variant="outline"
-                      aria-label={option.aria}
+                      colorScheme="cyan"
+                      aria-label="send email"
+                      icon={<EmailIcon />}
                       p={2}
                       cursor="pointer"
-                      colorScheme="cyan"
-                    >
-                      <FontAwesomeIcon icon={option.reactIcon} size="lg" />
-                    </Button>
-                  </Link>
-                ))}
-              </ButtonGroup>
-            </Flex>
-          </Box>
-        </Box>
+                    />
+                  </Obfuscate>
+                  {contactOptions.map(option => (
+                    <Link key={option.option} href={option.href} isExternal>
+                      <Button
+                        variant="outline"
+                        aria-label={option.aria}
+                        p={2}
+                        cursor="pointer"
+                        colorScheme="cyan"
+                      >
+                        <FontAwesomeIcon icon={option.reactIcon} size="lg" />
+                      </Button>
+                    </Link>
+                  ))}
+                </ButtonGroup>
+              </Flex>
+            </Box>
+            <Show above="md">
+              <Image
+                src="bird_250px.png"
+                alt="illustration of a bird"
+                align="center"
+                maxW="250px"
+              />
+            </Show>
+          </Flex>
+        </Flex>
       </Flex>
     </>
   );
