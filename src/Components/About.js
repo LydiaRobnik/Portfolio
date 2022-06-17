@@ -49,7 +49,7 @@ const About = () => {
             justify="center"
             // sx={{ 'justify-self': 'end' }}
             animate={{
-              x: [0, 100, 0],
+              x: [30, 100, 30],
               rotate: [5, -5, 5, -5, 5],
             }}
             transition={{

@@ -42,7 +42,7 @@ const Toolbox = () => {
           w="100%"
           mx={6}
           py={16}
-          borderY="1px"
+          borderTop="1px"
           borderColor="orange.200"
           direction="column"
         >
