@@ -18,13 +18,13 @@ const ProjectsOverview = () => {
           mx={6}
           py={16}
           borderTop="1px"
-          borderColor="orange.200"
+          borderColor="orange.300"
           direction="column"
         >
           <Heading as="h2" size="2xl">
             My Projects
           </Heading>
-          <Box my={16}>
+          <Box mt={16}>
             <ProjectCard />
           </Box>
         </Flex>

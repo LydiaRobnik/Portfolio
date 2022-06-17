@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  // useColorMode,
   Image,
   Heading,
   IconButton,
@@ -8,10 +7,12 @@ import {
   useMediaQuery,
   Box,
   Text,
+  useColorModeValue,
 } from '@chakra-ui/react';
+import '../Styles/home.css';
+
 import { animateScroll as scroll } from 'react-scroll';
 import { ArrowUpIcon } from '@chakra-ui/icons';
-import '../Styles/home.css';
 
 import About from './About';
 import Toolbox from './Toolbox';
@@ -19,7 +20,7 @@ import ProjectsOverview from './ProjectsOverview';
 import Contact from './Contact';
 
 const Home = () => {
-  // const { colorMode } = useColorMode();
+  const bg = useColorModeValue('gray.100', 'gray.400');
   const [isSmallerThan310] = useMediaQuery('(max-width: 310px)');
 
   return (
@@ -95,7 +96,8 @@ const Home = () => {
             aria-label="scroll to top"
             icon={<ArrowUpIcon />}
             variant="solid"
-            colorScheme="gray"
+            // colorScheme="gray"
+            bg={bg}
             pos="fixed"
             right="6"
             bottom="6"
@@ -110,7 +112,7 @@ const Home = () => {
               my={10}
               mx={6}
               fontSize={isSmallerThan310 ? '10px' : ['0.65rem', '0.8rem']}
-              // color="white"
+              color="#1A202C"
             >
               Lydia Robnik - Friedrichstr. 59 - 68809 Neulußheim
             </Text>
