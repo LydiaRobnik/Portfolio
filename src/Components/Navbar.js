@@ -36,7 +36,7 @@ const Navbar = () => {
           boxShadow="sm"
           py={3}
           px={3}
-          zIndex={10}
+          zIndex={100}
         >
           <Flex display={['none', 'none', 'flex', 'flex']}>
             {navigation.map(nav => (
