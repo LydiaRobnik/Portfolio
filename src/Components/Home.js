@@ -49,7 +49,6 @@ const Home = () => {
               borderRadius="md"
               alt="Profile picture Lydia Robnik"
               maxW="300px"
-              // mx={isSmallerThan310 ? '0' : '6'}
               mr={['0', '4', '8', '16']}
             />
             <Box grow="1" maxW={['100%', '100%', '50%']}>
@@ -58,8 +57,6 @@ const Home = () => {
                 mt="1.5rem"
                 mr={{ md: '3rem' }}
                 size={isSmallerThan310 ? 'md' : ['lg']}
-                // textAlign={{ base: 'center', sm: 'left' }}
-
                 w="100%"
               >
                 Welcome, I am Lydia
