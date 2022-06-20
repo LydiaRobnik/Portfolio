@@ -36,7 +36,7 @@ const Navbar = () => {
           boxShadow="sm"
           py={3}
           px={3}
-          zIndex={10}
+          zIndex={50}
         >
           <Flex display={['none', 'none', 'flex', 'flex']}>
             {navigation.map(nav => (
@@ -72,12 +72,12 @@ const Navbar = () => {
             onClick={handleClick}
           />
         </Flex>
-        {/* mobile menue, screen size < lg */}
 
+        {/* mobile menue, screen size < lg */}
         <Flex
           w="100vw"
           bg={bg}
-          zIndex={20}
+          zIndex={50}
           h="100vh"
           pos="fixed"
           top="0"
