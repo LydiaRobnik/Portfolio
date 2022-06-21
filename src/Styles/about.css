@@ -1,8 +1,7 @@
 .bubbleBox{
     position: relative;
     height:300px;
-    width: 100%;
-    /* animation: fadeIn ease 2s; */
+    width: 80px;
 }
 
 .bubbles{
