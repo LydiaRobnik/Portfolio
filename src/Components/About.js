@@ -1,17 +1,9 @@
 import React from 'react';
-import {
-  Text,
-  Heading,
-  Box,
-  Flex,
-  Image,
-  useMediaQuery,
-} from '@chakra-ui/react';
+import { Text, Heading, Box, Flex, Image } from '@chakra-ui/react';
 import ChakraBox from './ChakraBox';
 import '../Styles/about.css';
 
 const About = () => {
-  const [isGreaterThan900] = useMediaQuery('(min-width: 900px)');
   const bubbles = [
     {
       id: 1,
@@ -21,6 +13,7 @@ const About = () => {
         y: [0, -100],
         x: [0, 50],
         rotate: 10,
+        opacity: 1,
       },
     },
     {
@@ -29,7 +22,7 @@ const About = () => {
       zIndex: 17,
       animate: {
         y: [0, -100],
-        x: [0, 50],
+        x: [0, 30],
         rotate: 10,
       },
     },
@@ -39,15 +32,16 @@ const About = () => {
       zIndex: 16,
       animate: {
         y: [0, -100],
-        x: [0, 50],
+        x: [0, 20],
         rotate: 10,
+        opacity: 1,
       },
     },
   ];
 
   return (
     <>
-      <Flex maxW="960px" mx="auto" id="about" pb={isGreaterThan900 ? 16 : 8}>
+      <Flex maxW="960px" mx="auto" id="about" pb={{ base: 8, lg: 16 }}>
         <Flex
           mx={6}
           pt={16}
@@ -59,7 +53,7 @@ const About = () => {
           justify="start"
           wrap="wrap"
         >
-          <Box maxW="500px">
+          <Box maxW={{ base: '100%', lg: '500px' }}>
             <Heading as="h2" size="2xl">
               Who I Am
             </Heading>
@@ -78,21 +72,23 @@ const About = () => {
               creating illustrations using figma.
             </Text>
           </Box>
-          <Flex
-            direction="column"
-            align="start"
-            justify="center"
-            // wrap={{ base: 'none', lg: 'wrap' }}
-          >
-            <Box className="bubbleBox" mt={{ base: '-20rem', lg: '-20rem' }}>
+          <Flex direction="column" align="start" justify="start">
+            <Box
+              className="bubbleBox"
+              mt={{ base: '-20rem', lg: '-20rem' }}
+              ml={{ base: '1rem', sm: '5rem', md: '20rem', lg: '0' }}
+            >
               {bubbles &&
                 bubbles.map(bubble => (
                   <ChakraBox
                     key={bubble.id}
+                    initial={{ opacity: 0.2, scale: 0.7 }}
                     animate={bubble.animate}
+                    exit={{ opacity: 0.2 }}
                     transition={{
                       duration: 15,
-                      ease: 'easeInOut',
+                      ease: 'easeOut',
+                      delay: bubble.id * 1.8,
                       repeat: Infinity,
                     }}
                     className="bubbles"
@@ -117,14 +113,14 @@ const About = () => {
                 repeat: Infinity,
                 repeatType: 'reverse',
               }}
-              zIndex={19}
             >
               <Image
                 src="wale_transparent.png"
                 alt="illustration of a wale"
                 align="center"
-                maxW="350px"
-                mb={isGreaterThan900 ? '-20rem' : ''}
+                maxW={{ base: '80%', sm: '50%', md: '350px' }}
+                mb={{ base: '0', lg: '-20rem' }}
+                ml={{ base: '1rem', sm: '5rem', md: '20rem', lg: '0' }}
               />
             </ChakraBox>
           </Flex>

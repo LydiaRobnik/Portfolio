@@ -30,13 +30,11 @@ const Toolbox = () => {
     <>
       <Flex
         maxW="960px"
-        // h="100vh"
         mx="auto"
         id="skills"
         direction="row"
         align="center"
         justify="center"
-        // pb={16}
       >
         <Flex
           w="100%"
@@ -61,7 +59,7 @@ const Toolbox = () => {
               templateColumns="repeat(auto-fill, minmax(100px, 1fr))"
               gap={4}
               my={8}
-              maxW="430px"
+              maxW={{ base: '90%', sm: '400px' }}
             >
               {techStack.map(skill => (
                 <GridItem key={skill.name}>

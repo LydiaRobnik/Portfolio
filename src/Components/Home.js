@@ -48,7 +48,8 @@ const Home = () => {
               src="profile-pic-ly-stripes.jpg"
               borderRadius="md"
               alt="Profile picture Lydia Robnik"
-              maxW="300px"
+              maxW={{ base: '220px', sm: '300px' }}
+              // maxW="300px"
               mr={['0', '4', '8', '16']}
             />
             <Box grow="1" maxW={['100%', '100%', '50%']}>
@@ -67,12 +68,10 @@ const Home = () => {
                 mt={['0.4rem', '0.8rem', '2rem']}
                 mb="1rem"
                 size={isSmallerThan310 ? 'md' : ['xl', '2xl', '3xl', '4xl']}
-                // textAlign={{ base: 'center', sm: 'left' }}
                 w={['100%', '100%', '100%', '50%']}
                 color="transparent"
                 bgGradient="linear(to-l, cyan.400, teal.400, green.300)"
                 bgClip="text"
-                // className="gradient"
               >
                 Front-End Developer
               </Heading>
