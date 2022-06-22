@@ -11,8 +11,8 @@ const ProjectCard = () => {
           </Heading>
           <Text as="p" my={6}>
             The final project of my professional training at WBS CODING SCHOOL
-            was an web application for yoga teachers. The application was
-            developed within 2.5 weeks and a team of four people. Uses can
+            was a web application for yoga teachers. The application was
+            developed within 2.5 weeks and a team of four people. Users can
             easily and quickly prepare, structure and schedule their classes.
             Content like planned classes, recurring sequences and custom
             exercises are automatically saved to be reused in later plannings.
