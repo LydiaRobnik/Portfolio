@@ -8,7 +8,7 @@ const About = () => {
     {
       id: 1,
       image: 'bubbles_1.png',
-      zIndex: 18,
+      zIndex: 12,
       animate: {
         y: [0, -100],
         x: [0, 50],
@@ -19,7 +19,7 @@ const About = () => {
     {
       id: 2,
       image: 'bubbles_2.png',
-      zIndex: 17,
+      zIndex: 11,
       animate: {
         y: [0, -100],
         x: [0, 30],
@@ -29,7 +29,7 @@ const About = () => {
     {
       id: 3,
       image: 'bubbles_3.png',
-      zIndex: 16,
+      zIndex: 10,
       animate: {
         y: [0, -100],
         x: [0, 20],
@@ -53,7 +53,7 @@ const About = () => {
           justify="start"
           wrap="wrap"
         >
-          <Box maxW={{ base: '100%', lg: '500px' }}>
+          <Box maxW={{ base: '100%', lg: '500px' }} zIndex={15}>
             <Heading as="h2" size="2xl">
               Who I Am
             </Heading>
