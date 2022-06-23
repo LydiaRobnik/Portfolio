@@ -45,7 +45,7 @@ const Home = () => {
             mx={6}
           >
             <Image
-              src="profile-pic-ly-stripes.jpg"
+              src="https://storage.googleapis.com/portfolioly-bucket/profile-pic-ly-stripes.jpg"
               borderRadius="md"
               alt="Profile picture Lydia Robnik"
               maxW={{ base: '220px', sm: '300px' }}

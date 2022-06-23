@@ -29,7 +29,10 @@ const ProjectCard = () => {
         </Box>
         <Box w={{ md: '40%' }} mt={{ sm: 6, md: 16 }}>
           <Link href="https://monkeyplan.ey.r.appspot.com" isExternal>
-            <Image src="preview_yogalessoncreator.jpg" borderRadius="md" />
+            <Image
+              src="https://storage.googleapis.com/portfolioly-bucket/preview_yogalessoncreator.jpg"
+              borderRadius="md"
+            />
           </Link>
         </Box>
       </Flex>

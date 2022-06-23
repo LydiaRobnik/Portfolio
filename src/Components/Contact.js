@@ -109,7 +109,7 @@ const Contact = () => {
             </Box>
             <Show above="md">
               <Image
-                src="bird_250px.png"
+                src="https://storage.googleapis.com/portfolioly-bucket/bird_250px.png"
                 alt="illustration of a bird"
                 align="center"
                 maxW="250px"

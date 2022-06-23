@@ -7,7 +7,7 @@ const About = () => {
   const bubbles = [
     {
       id: 1,
-      image: 'bubbles_1.png',
+      image: 'https://storage.googleapis.com/portfolioly-bucket/bubbles_1.png',
       zIndex: 12,
       animate: {
         y: [0, -100],
@@ -18,7 +18,7 @@ const About = () => {
     },
     {
       id: 2,
-      image: 'bubbles_2.png',
+      image: 'https://storage.googleapis.com/portfolioly-bucket/bubbles_1.png',
       zIndex: 11,
       animate: {
         y: [0, -100],
@@ -28,7 +28,7 @@ const About = () => {
     },
     {
       id: 3,
-      image: 'bubbles_3.png',
+      image: 'https://storage.googleapis.com/portfolioly-bucket/bubbles_3.png',
       zIndex: 10,
       animate: {
         y: [0, -100],
@@ -115,7 +115,7 @@ const About = () => {
               }}
             >
               <Image
-                src="wale_transparent.png"
+                src="https://storage.googleapis.com/portfolioly-bucket/wale_transparent.png"
                 alt="illustration of a wale"
                 align="center"
                 maxW={{ base: '80%', sm: '50%', md: '350px' }}
