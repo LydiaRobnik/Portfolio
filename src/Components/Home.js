@@ -73,7 +73,7 @@ const Home = () => {
                 bgGradient="linear(to-l, cyan.400, teal.400, green.300)"
                 bgClip="text"
               >
-                Front-End Developer
+                Full-Stack Developer
               </Heading>
             </Box>
           </Flex>

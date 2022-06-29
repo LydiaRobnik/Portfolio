@@ -58,9 +58,9 @@ const About = () => {
               Who I Am
             </Heading>
             <Text my={6}>
-              As a curiosity-driven front-end devoper I am interested in
-              experimenting with technologies and continually expanding my
-              knowledge.
+              As a curiosity-driven full-stack devoper I am interested in
+              experimenting with design and technologies to continually expand
+              my knowledge.
             </Text>
             <Text my={6}>
               I'm happiest when I'm creating user friendly, well designed and
